@@ -49,4 +49,5 @@ let replacers = @[ul, bold, ol, emphasis, strike, hr, links, code, header]
 proc md*(text: string): string =
   result = text
   for processor in zip(matchers, replacers):
-    result = nre.replace(result, processor[0], processor[1])
+    let (matcher, replacer) = processor
+    result = nre.replace(result, matcher, replacer)
