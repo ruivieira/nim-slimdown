@@ -41,7 +41,7 @@ let matchers = @[
   re"\n-{5,}", # hr
   re"\[([^\[]+)\]\(([^\)]+)\)", # links
   re"`(.*?)`", # code
-  re"(#+)(.*)" # header
+  re"\n(#+)(.*)" # header
 ]
 
 let replacers = @[ul, bold, ol, emphasis, strike, hr, links, code, header]
