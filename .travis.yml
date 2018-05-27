@@ -1,0 +1,10 @@
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y nim libssl
+language: c
+compiler:
+  # Build and test using both gcc and clang
+  - gcc
+  - clang
+script:
+  - nim c --cc:$CC --verbosity:0 -r slimdown.nim
